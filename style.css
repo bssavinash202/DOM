@@ -14,13 +14,13 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 800px;
-    height: 700px;
+    width: 1000px;
+    height: 800px;
     background:white;
     box-shadow: 0px 10px 10px black;
     gap: 100px;
     border-radius: 30px;
-   
+    padding: 10px;
 }
 .buttons{
     margin-top: 20px;
@@ -28,7 +28,7 @@
     gap:40px;
 }
 .buttons button{
-    background-color: black;
+    background-color: #043846;
     color: #fff;
     width: 170px;
     height: 55px;
@@ -41,18 +41,42 @@
 }
 button:hover{
     background-color: #fff;
-    color: black;
+    color: #043846;
     transform: scaleX(1.1);
 }
 table{
     text-align: center;
-    border: 1px solid rgb(212, 149, 149);
-    width: 700px;
-    height: auto;
+    border: 1px solid rgb(0, 0, 0);
+    width: 800px;
+    
     color: black;
     backdrop-filter: blur(10px);
-    font-size: 40px;
+    font-size: 30px;
 }
-.x{
+/* .x{
     display: none;
+} */
+th{
+    background-color: #043846;
+    color: #fff;
+    padding: 10px 10px;
+}
+
+td>button{
+    font-size: 25px;
+    cursor: pointer;
+}
+td{
+    padding: 10px;
+}
+tr:nth-child(1){
+    cursor: pointer;
+    transition: all 0.6s ease;
+}
+tr:hover:nth-child(1){
+    cursor: pointer;
+    transform: scaleX(1.01);
+}
+img:hover{
+    transform: scale(1.02);
 }

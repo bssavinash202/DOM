@@ -18,34 +18,43 @@ let directors = [
     {name: 'Boyapati', age: 54, movies: 11, pic: './assets/Boyapati.jpg'},
     {name: 'Nag Ashwin', age: 38, movies: 6, pic: './assets/nag.jpg'}
 ];
-
+let List = [];
 function details(arr){
+    List = arr;
     let ele = document.getElementById('details');
     let tr = '';
-    for(val of arr){
+    arr.map(function(val,index,arr){
+        let rowColor = (index%2==0)? 'background-color: #70aebf':'background-color: white'
         tr=tr+`
-        <tr>
+        <tr style="${rowColor}">
             <td>${val.name}</td>
              <td>${val.age}</td>
               <td>${val.movies}</td>
-              <td><img src=${val.pic} width="100px" height="100px"/></td>
+              <td><img src=${val.pic} width="100px" height="100px" alt="image not found"/></td>
+              <td><button onclick="deleteRow(${index})" style="border:none"><i class="fa-solid fa-trash"></i></button></td>
+              
         </tr>
         `
-    }
+    })
+    
     let table = `
-        <table >
+        <table>
             <tr>
                 <th>name</th>
                 <th>age</th>
                 <th>Movies</th>
                 <th>Picture</th>
+                <th>Action</th>
             </tr>
             ${tr}
         </table>
     `
     ele.innerHTML = table;
-    
-    
+}
+
+function deleteRow(index){
+    List.splice(index,1);
+    details(List)
 }
 function getHeroes(){
     let arr = heroes;
